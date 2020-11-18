@@ -35,9 +35,6 @@
   "license": "MIT",
   "scripts": {
     "build": "rm -rf dist && tsc -b",
-    "commit": "git-cz",
-    "commit:add": "git add -A && npm run commit",
-    "devkeeper:update": "devkeeper update",
     "file:watch": "ts-node-dev --respawn --transpileOnly --compiler-options '{ \"module\": \"commonjs\" }'",
     "format": "prettier --write --config .prettierrc --check 'src/**/*.+(js|jsx|json|less|css|ts|tsx|md|vue|gql)'",
     "lint": "eslint --max-warnings=0 --ignore-path .gitignore --cache 'src/**/*.+(js|jsx|ts|tsx|vue)'",
@@ -60,44 +57,7 @@
   },
   "devDependencies": {
     "@types/lodash.set": "^4.3.6",
-    "devkeeper": "^0.1.49"
-  },
-  "devkeeperModifications": {
-    "files": [
-      ".gitignore",
-      ".commitlintrc",
-      ".czrc",
-      ".editorconfig",
-      ".eslintignore",
-      ".eslintrc.js",
-      ".gitattributes",
-      ".gitignore-to-rename",
-      ".huskyrc",
-      ".lintstagedrc",
-      ".prettierrc",
-      "jest.config.json",
-      "tsconfig.json"
-    ],
-    "objectKeys": [
-      "scripts.build",
-      "scripts.typedoc:md",
-      "scripts.typedoc:html",
-      "scripts.typedoc:single-md",
-      "scripts.readme",
-      "scripts.format",
-      "scripts.lint",
-      "scripts.test",
-      "scripts.test:watch",
-      "scripts.validate",
-      "scripts.commit",
-      "scripts.commit:add",
-      "scripts.release",
-      "scripts.file:watch",
-      "scripts.devkeeper:update"
-    ],
-    "arrayKeys": {
-      "files": []
-    },
-    "version": "0.1.49"
+    "husky": "^4.3.0",
+    "typescript": "3.8.3"
   }
 }
